@@ -13,6 +13,7 @@
   >
     <div
       class="flex justify-center flex-col border-4 border-white p-8 bg-gray-900"
+      style="min-height: 400px"
     >
       <div class="flex justify-center text-gray-600">
         <nuxt-link
