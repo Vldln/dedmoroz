@@ -5,7 +5,7 @@
 </template>
 <style scoped>
 .body {
-  background-image: url(~assets/bg.png);
+  background-image: url(/bg.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
