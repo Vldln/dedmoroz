@@ -1,78 +1,48 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        dedmoroz
+  <div
+    class="
+      container
+      mx-auto
+      flex
+      items-center
+      h-screen
+      justify-center
+      px-3
+      sm:px-0
+    "
+  >
+    <div
+      class="flex justify-center flex-col border-4 border-white p-8 bg-gray-900"
+    >
+      <div class="flex justify-center text-gray-600">
+        <nuxt-link
+          v-for="locale in availableLocales"
+          class="mr-3"
+          :key="locale.code"
+          :to="switchLocalePath(locale.code)"
+          >{{ locale.name }}</nuxt-link
+        >
+      </div>
+      <h1 class="text-3xl text-gray-200 sm:text-4xl pb-4 font-bold text-center">
+        {{ $t('title') }}
       </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+      <div
+        class="text-sm sm:text-lg text-gray-200 text-center flex justify-center"
+      >
+        <div class="max-w-screen-sm">
+          {{ $t('info') }}
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  computed: {
+    availableLocales() {
+      return this.$i18n.locales.filter((i) => i.code !== this.$i18n.locale)
+    },
+  },
+}
 </script>
-
-<style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>
