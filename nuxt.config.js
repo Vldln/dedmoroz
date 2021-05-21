@@ -1,7 +1,9 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-
+  router: {
+    base: '/dedmoroz/'
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'dedmoroz',
@@ -33,7 +35,7 @@ export default {
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss',
+    'tailwindcss',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
