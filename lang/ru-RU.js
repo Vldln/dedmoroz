@@ -6,6 +6,7 @@ export default {
     title: 'Заявка на участие',
     name: 'Имя',
     email: 'Email',
+    theme: 'Тема выступления',
     submit: 'Отправить',
     sucess: 'Заявка успешно отправлена',
   },

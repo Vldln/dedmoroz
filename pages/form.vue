@@ -58,6 +58,15 @@
             type="email"
             name="email"
         /></label>
+        <label class="label">
+          {{ $t('form.theme') }}
+          <input
+            id="theme"
+            v-model="formData.theme"
+            class="form"
+            type="theme"
+            name="theme"
+        /></label>
         <div class="text-center pt-4">
           <button
             class="text-white border border-white px-5 py-2 rounded"
