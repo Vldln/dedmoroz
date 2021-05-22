@@ -27,22 +27,26 @@
       <h1 class="text-3xl text-gray-200 sm:text-4xl pb-4 font-bold text-center">
         {{ $t('form.title') }}
       </h1>
-      <form name="Apply" netlify>
-        <p>
-          <label class="label">
-            {{ $t('form.name') }} <input class="form" type="text" name="name"
-          /></label>
-        </p>
-        <p>
-          <label class="label">
-            {{ $t('form.email') }}
-            <input class="form" type="email" name="email"
-          /></label>
-        </p>
+      <form
+        name="Apply"
+        method="post"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="form-name" value="ask-question" />
+        <label class="label">
+          {{ $t('form.name') }}
+          <input id="name" class="form" type="text" name="name"
+        /></label>
+        <label class="label">
+          {{ $t('form.email') }}
+          <input id="email" class="form" type="email" name="email"
+        /></label>
         <div class="text-center pt-4">
           <button
             class="text-white border border-white px-5 py-2 rounded"
             type="submit"
+            value="Send message"
           >
             {{ $t('form.submit') }}
           </button>
