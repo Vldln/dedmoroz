@@ -25,24 +25,29 @@
         >
       </div>
       <h1 class="text-3xl text-gray-200 sm:text-4xl pb-4 font-bold text-center">
-        {{ $t('title') }}
+        {{ $t('form.title') }}
       </h1>
-      <div
-        class="
-          text-sm
-          sm:text-lg
-          text-gray-200 text-center
-          flex flex-col
-          justify-center
-        "
-      >
-        <div class="max-w-screen-sm">
-          {{ $t('info') }}
+      <form name="contact" netlify>
+        <p>
+          <label class="label">
+            {{ $t('form.name') }} <input class="form" type="text" name="name"
+          /></label>
+        </p>
+        <p>
+          <label class="label">
+            {{ $t('form.email') }}
+            <input class="form" type="email" name="email"
+          /></label>
+        </p>
+        <div class="text-center pt-4">
+          <button
+            class="text-white border border-white px-5 py-2 rounded"
+            type="submit"
+          >
+            {{ $t('form.submit') }}
+          </button>
         </div>
-        <NuxtLink to="/form" class="pt-3 text-white underline">
-          {{ $t('apply') }}
-        </NuxtLink>
-      </div>
+      </form>
     </div>
   </div>
 </template>
