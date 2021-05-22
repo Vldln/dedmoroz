@@ -35,13 +35,17 @@
         data-netlify-honeypot="bot-field"
         @submit.prevent="handleSubmit"
       >
+        <input type="hidden" name="form-name" value="contact" />
+        <p hidden>
+          <label> Don’t fill this out: <input name="bot-field" /> </label>
+        </p>
         <input type="hidden" name="form-name" value="ask-question" />
         <label class="label">
           {{ $t('form.name') }}
           <input
             id="name"
+            v-model="formData.name"
             class="form"
-            :v-model="formData.name"
             type="text"
             name="name"
         /></label>
@@ -49,8 +53,8 @@
           {{ $t('form.email') }}
           <input
             id="email"
+            v-model="formData.email"
             class="form"
-            :v-model="formData.email"
             type="email"
             name="email"
         /></label>

@@ -7,5 +7,6 @@ export default {
     name: 'Имя',
     email: 'Email',
     submit: 'Отправить',
+    sucess: 'Заявка успешно отправлена',
   },
 }
