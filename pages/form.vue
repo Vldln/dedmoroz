@@ -27,7 +27,7 @@
       <h1 class="text-3xl text-gray-200 sm:text-4xl pb-4 font-bold text-center">
         {{ $t('form.title') }}
       </h1>
-      <form name="contact" netlify>
+      <form name="Apply" netlify>
         <p>
           <label class="label">
             {{ $t('form.name') }} <input class="form" type="text" name="name"

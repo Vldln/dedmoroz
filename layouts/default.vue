@@ -16,10 +16,13 @@
 
 .form {
   border: 1px solid white;
+  color: black;
   border-radius: 5px;
   display: block;
   width: 100%;
   padding-top: 5px;
+  padding-right: 15px;
+  padding-left: 15px;
   padding-bottom: 5px;
   margin-bottom: 15px;
 }
