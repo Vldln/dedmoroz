@@ -30,27 +30,34 @@
       <form
         name="Apply"
         method="post"
+        action="/success/"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
+        @submit.prevent="handleSubmit"
       >
         <input type="hidden" name="form-name" value="ask-question" />
         <label class="label">
           {{ $t('form.name') }}
-          <input id="name" class="form" :v-model="name" type="text" name="name"
+          <input
+            id="name"
+            class="form"
+            :v-model="formData.name"
+            type="text"
+            name="name"
         /></label>
         <label class="label">
           {{ $t('form.email') }}
           <input
             id="email"
             class="form"
-            :v-model="namemaile"
+            :v-model="formData.email"
             type="email"
             name="email"
         /></label>
         <div class="text-center pt-4">
           <button
             class="text-white border border-white px-5 py-2 rounded"
-            @click="submit"
+            type="submit"
           >
             {{ $t('form.submit') }}
           </button>
@@ -64,8 +71,7 @@
 export default {
   data() {
     return {
-      name: null,
-      email: null,
+      formData: {},
     }
   },
   computed: {
@@ -74,18 +80,24 @@ export default {
     },
   },
   methods: {
-    submit() {
-      this.$axios.$post(
-        '/',
-        {
-          name: this.name,
-        },
-        {
-          headers: {
-            'Content-Type': 'multipart/form-data',
-          },
-        }
-      )
+    encode(data) {
+      return Object.keys(data)
+        .map(
+          (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+        )
+        .join('&')
+    },
+    handleSubmit(e) {
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: this.encode({
+          'form-name': e.target.getAttribute('name'),
+          ...this.formData,
+        }),
+      })
+        .then(() => this.$router.push('/success'))
+        .catch((error) => alert(error))
     },
   },
 }
