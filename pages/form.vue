@@ -59,22 +59,49 @@
               name="name"
           /></label>
           <label class="label">
+            {{ $t('form.country') }}
+            <input
+              id="country"
+              v-model="formData.country"
+              class="form"
+              type="text"
+              name="country"
+          /></label>
+          <label class="label">
+            {{ $t('form.special') }}
+            <input
+              id="special"
+              v-model="formData.special"
+              class="form"
+              type="text"
+              name="special"
+          /></label>
+          <label class="label">
+            {{ $t('form.arrive') }}
+            <input
+              id="arrive"
+              v-model="formData.arrive"
+              class="form"
+              type="text"
+              name="arrive"
+          /></label>
+          <label class="label">
+            {{ $t('form.departure') }}
+            <input
+              id="departure"
+              v-model="formData.departure"
+              class="form"
+              type="date"
+              name="departure"
+          /></label>
+          <label class="label">
             {{ $t('form.email') }}
             <input
               id="email"
               v-model="formData.email"
               class="form"
-              type="email"
+              type="date"
               name="email"
-          /></label>
-          <label class="label">
-            {{ $t('form.theme') }}
-            <input
-              id="theme"
-              v-model="formData.theme"
-              class="form"
-              type="theme"
-              name="theme"
           /></label>
           <div class="text-center pt-4">
             <button
