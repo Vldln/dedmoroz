@@ -59,6 +59,15 @@
               name="name"
           /></label>
           <label class="label">
+            {{ $t('form.email') }}
+            <input
+              id="email"
+              v-model="formData.email"
+              class="form"
+              type="email"
+              name="email"
+          /></label>
+          <label class="label">
             {{ $t('form.country') }}
             <input
               id="country"
@@ -82,7 +91,7 @@
               id="arrive"
               v-model="formData.arrive"
               class="form"
-              type="text"
+              type="date"
               name="arrive"
           /></label>
           <label class="label">
@@ -93,15 +102,6 @@
               class="form"
               type="date"
               name="departure"
-          /></label>
-          <label class="label">
-            {{ $t('form.email') }}
-            <input
-              id="email"
-              v-model="formData.email"
-              class="form"
-              type="date"
-              name="email"
           /></label>
           <div class="text-center pt-4">
             <button

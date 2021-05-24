@@ -11,7 +11,7 @@
 }
 .label {
   color: white;
-  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .form {
