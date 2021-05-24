@@ -8,7 +8,7 @@ export default {
     email: 'Email',
     submit: 'Отправить',
     sucess: 'Заявка успешно отправлена',
-    county: 'Из какой вы страны',
+    country: 'Из какой вы страны',
     special: 'Особые потребности',
     arrive: 'Дата прибытия',
     departure: 'Дата отбытия',
