@@ -5,7 +5,7 @@
       mx-auto
       flex
       items-center
-      h-screen
+      min-h-screen
       justify-center
       px-3
       sm:px-0
