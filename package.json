@@ -21,9 +21,11 @@
     "nuxt-i18n": "^6.27.0"
   },
   "devDependencies": {
+    "@kazupon/vue-i18n-loader": "^0.5.0",
     "@nuxtjs/eslint-config": "^6.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/stylelint-module": "^4.0.0",
+    "@nuxtjs/tailwindcss": "^3.4.3",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.22.0",
     "eslint-config-prettier": "^8.1.0",
@@ -35,7 +37,6 @@
     "push-dir": "^0.4.1",
     "stylelint": "^13.12.0",
     "stylelint-config-prettier": "^8.0.2",
-    "@nuxtjs/tailwindcss": "^3.4.3",
     "stylelint-config-standard": "^21.0.0"
   }
 }

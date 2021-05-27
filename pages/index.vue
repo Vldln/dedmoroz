@@ -12,7 +12,7 @@
     "
   >
     <div
-      class="flex justify-center flex-col border-4 border-white p-8 bg-gray-900"
+      class="flex justify-center flex-col p-8 bg-gray-900"
       style="min-height: 400px"
     >
       <div class="flex justify-center text-gray-600">
@@ -36,10 +36,23 @@
           justify-center
         "
       >
-        <div class="max-w-screen-sm">
+        <span class="max-w-screen-sm">
           {{ $t('info') }}
-        </div>
-        <NuxtLink to="/form" class="pt-3 text-white underline">
+        </span>
+        <a
+          v-for="(item, index) in more"
+          v-show="item.lang === $i18n.getLocaleCookie()"
+          :key="index"
+          :href="item.url"
+          class="underline"
+        >
+          {{ $t('more') }}
+        </a>
+        <NuxtLink
+          v-if="$i18n.getLocaleCookie() !== 'fi'"
+          to="/form"
+          class="pt-3 text-xl sm:text-4xl text-white underline"
+        >
           {{ $t('apply') }}
         </NuxtLink>
       </div>
@@ -49,6 +62,24 @@
 
 <script>
 export default {
+  data() {
+    return {
+      more: [
+        {
+          url: '/Festival Feast After Plague.pdf',
+          lang: 'en',
+        },
+        {
+          url: '/Pitkä versio suomeksi.pdf',
+          lang: 'fi',
+        },
+        {
+          url: '/Пир после чумы.pdf',
+          lang: 'ru',
+        },
+      ],
+    }
+  },
   computed: {
     availableLocales() {
       return this.$i18n.locales.filter((i) => i.code !== this.$i18n.locale)

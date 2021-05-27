@@ -12,7 +12,7 @@
     "
   >
     <div
-      class="flex justify-center flex-col border-4 border-white p-8 bg-gray-900"
+      class="flex justify-center flex-col p-8 bg-gray-900"
       style="min-height: 400px"
     >
       <div v-if="!success" class="flex justify-center text-gray-600">
