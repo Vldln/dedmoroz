@@ -39,7 +39,7 @@
         <span class="max-w-screen-sm">
           {{ $t('info') }}
         </span>
-        <a
+        <!-- <a
           v-for="(item, index) in more"
           v-show="item.lang === $i18n.getLocaleCookie()"
           :key="index"
@@ -47,7 +47,7 @@
           class="underline"
         >
           {{ $t('more') }}
-        </a>
+        </a> -->
         <NuxtLink
           v-if="$i18n.getLocaleCookie() !== 'fi'"
           to="/form"
